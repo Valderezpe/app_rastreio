@@ -1,0 +1,43 @@
+<<<<<<< HEAD
+const app = express();
+app.use(cors()); 
+app.use (bodyParser.urlencoded({extended: false}))
+
+let user=models.User;
+let tracking=models.Tracking;
+let product = models.Product;
+
+=======
+>>>>>>> 37f60d4cf61349c9f44481fbd2f482dc73510ce4
+app.get('/create', async (req, res)=>{
+    let create= await user.create({
+        name: "val",
+        password: '123',
+        createdAt: new Date(),
+        updateAt: new Date(),
+    });
+    res. send('Usuário criado com sucesso!');
+});
+
+app.get('/read', async(req, res)=>{
+    let read=await user.findAll({
+        raw: true
+    });
+    console.log(read);
+});
+
+app.get('/update', async (req, res)=>{
+    let update = await user.findByPk(1).then((response)=>{
+        response.name="joseeeee"
+        response.password='987'
+        response.save();
+    });
+
+app.get('/delete', async(req, res)=>{
+    user.destroy({
+        where: {
+            id:2
+        }
+    })
+})
+})

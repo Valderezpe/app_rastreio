@@ -1,0 +1,41 @@
+{
+  "name": "rastreio",
+  "license": "0BSD",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^2.1.2",
+    "@react-native-community/masked-view": "^0.1.11",
+    "@react-navigation/material-bottom-tabs": "^6.2.29",
+    "@react-navigation/native": "^6.0.0",
+    "@react-navigation/stack": "^5.14.9",
+    "cors": "^2.8.5",
+    "expo": "53.0.9",
+    "expo-local-authentication": "~16.0.4",
+    "expo-status-bar": "~2.2.3",
+    "mysql2": "^3.14.1",
+    "rastreio": "file:",
+    "react": "19.0.0",
+    "react-native": "0.79.2",
+    "react-native-gesture-handler": "~2.24.0",
+    "react-native-paper": "^5.14.1",
+    "react-native-reanimated": "~3.17.4",
+    "react-native-safe-area-context": "5.4.0",
+    "react-native-screens": "~4.10.0",
+    "react-native-vector-icons": "^10.2.0",
+    "sequelize": "^6.37.7",
+    "sequelize-cli": "^6.6.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  },
+  "private": true
+}
