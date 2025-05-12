@@ -20,6 +20,7 @@
     "expo-local-authentication": "~16.0.4",
     "expo-status-bar": "~2.2.3",
     "mysql2": "^3.14.1",
+    "qrcode": "^1.5.4",
     "rastreio": "file:",
     "react": "19.0.0",
     "react-native": "0.79.2",

@@ -2,7 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const models = require("./models");
-const { where } = require("sequelize");
+// const { where } = require("sequelize");
+const QRCode = require("qrcode");
 
 const app = express();
 app.use(cors());
@@ -58,6 +59,10 @@ app.post("/create", async (req, res) => {
   await product.create({
     trackingId: trackingId,
     name: req.body.product,
+  });
+  QRCode.toDataURL(req.body.code).then((url) => {
+    QRCode.toFile("./assets/img/code.png", req.body.code);
+    res.send(JSON.stringify(url));
   });
 });
 
