@@ -51,7 +51,7 @@ app.post("/create", async (req, res) => {
       code: req.body.code,
       local: req.body.local,
     })
-    .then(() => {
+    .then((response) => {
       trackingId += response.id;
     });
 

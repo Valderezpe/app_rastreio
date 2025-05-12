@@ -25,7 +25,7 @@ export default function Cadastro({ navigation }) {
 
   async function getUser() {
     let response = await AsyncStorage.getItem("userData");
-    let json = JSON.parse(Response);
+    let json = JSON.parse(response);
     setUser(json.id);
   }
 
