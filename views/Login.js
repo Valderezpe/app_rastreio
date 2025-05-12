@@ -12,6 +12,7 @@ import { css } from "../assets/css/css";
 import { text } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import * as LocalAuthentication from "expo-local-authentication";
+import config from "../config/config.json";
 
 export default function Login({ navigation }) {
   const [display, setDisplay] = useState("none");
@@ -60,7 +61,7 @@ export default function Login({ navigation }) {
   }
 
   async function sendForm() {
-    let response = await fetch("http://192.168.0.6:3000/login", {
+    let response = await fetch(`${config.urlRoot}login`, {
       method: "POST",
       headers: {
         Accept: "application/json",

@@ -24,6 +24,24 @@ app.post("/login", async (req, res) => {
   }
 });
 
+app.post("/verifyPass", async (req, res) => {
+  let response = await user.findOne({
+    where: { id: req.body.id, password: req.body.senhaAntiga },
+  });
+  //   console.log(response);
+  if (response === null) {
+    res.send(JSON.stringify("Senha antiga não confere"));
+  } else {
+    if (req.body.novaSenha === req.body.confNovaSenha) {
+      response.password = req.body.novaSenha;
+      response.save();
+      res.send(JSON.stringify("Senha atualizada com sucesso!"));
+    } else {
+      res.send(JSON.stringify("Nova Senha e Corfimação não conferem!"));
+    }
+  }
+});
+
 let port = process.env.PORT || 3000;
 app.listen(port, (req, res) => {
   console.log("Servidor Rodando");
